@@ -54,10 +54,8 @@ def printState(state, total):
 # allowed[1]: destination
 def solveDudeney(r, n, allowed, state, total):
     if n == 0:
-        printState(state, total)
         return
     elif n < len(allowed):
-        printState(state, total)
         for i in range(n, 0, -1):
             state[allowed[i]].append(state[allowed[0]].pop(-1))
             total[0] += 1
@@ -99,7 +97,8 @@ def solveExample(r, n):
     allowed = [0,r-1]
     for a in range(1, r-1):
         allowed.append(a)
-   
+    
+    printState(state, [0])
     solveDudeney(r, n, allowed, state, [0])
 
 def solveSpecific(r, n, origin, destination):
@@ -115,6 +114,7 @@ def solveSpecific(r, n, origin, destination):
         if a != origin and a != destination:
             allowed.append(a)
    
+    printState(state, [0])
     solveDudeney(r, n, allowed, state, [0])
     
 def minSteps(r, n_min, n_max):
