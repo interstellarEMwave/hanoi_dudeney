@@ -50,7 +50,8 @@ def printState(state, total):
     print("¯¯¯\t"*len(state), total[0], "\n")
     
 
-
+# allowed[0]: origin
+# allowed[1]: destination
 def solveDudeney(r, n, allowed, state, total):
     if n == 0:
         printState(state, total)
@@ -85,6 +86,7 @@ def solveDudeney(r, n, allowed, state, total):
             allowed_new2.append(allowed_new2.pop(0))
             allowed_new2.insert(0, b.pop(-1))
             solveDudeney(i, towers[i-1], allowed_new2, state, total)
+
 
 
 def solveExample(r, n):
