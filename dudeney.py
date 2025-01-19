@@ -126,6 +126,10 @@ def main():
     a = []
     for i in range(1, len(sys.argv)):
         a.append(int(sys.argv[i]))
+    if(a[0] < 3):
+        print("Incorrect input. Minimum pegs is 3")
+        return
+
     if(len(a) == 3):
         minSteps(a[0], a[1], a[2])
     elif(len(a) == 2):
