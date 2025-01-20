@@ -128,7 +128,7 @@ def main():
     a = []
     for i in range(1, len(sys.argv)):
         a.append(int(sys.argv[i]))
-    if(a[0] < 3):
+    if(a[0] < 2):
         print("Incorrect input. Minimum pegs is 3")
         return
 
